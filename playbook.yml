@@ -1,0 +1,8 @@
+- hosts: all
+
+  tasks: 
+    - shell: echo hello world
+      sudo: yes
+    - shell: curl -IL tut.by
+      always_run: yes
+      

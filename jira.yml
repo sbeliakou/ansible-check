@@ -1,0 +1,6 @@
+
+- hosts: all 
+  tasks:
+    - shell: curl -IL tut.by
+      always_run: yes
+      sudo: no

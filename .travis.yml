@@ -1,0 +1,10 @@
+before_install:
+  - mkdir lint/
+  - git clone https://github.com/Demengjkee/custom-ansible-lint.git lint/
+language: python
+python:
+  - "3.5"
+install:
+  - pip install -r lint/requirements.txt
+script:
+  - python lint/lint3.py *.yml --roles_dir=$(pwd) --pr_id=${TRAVIS_PULL_REQUEST} --repo_name=${TRAVIS_REPO_SLUG} --token="${ANSIBLE_CHECK_TOKEN}" --publish
